@@ -42,6 +42,11 @@ module.exports = function toReadable(number) {
 
     if (number === 0) return 'zero';
 
-
+    if (number >= 100) {
+      result += ones[Math.floor(number / 100)] + ' hundred ';
+      number %= 100;
+    }
+  
+    return result.trim();
 
 };
